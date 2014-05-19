@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    
+
+    <LinearLayout
+        android:id="@+id/containerScanning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" 
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true">
+
+	    <ProgressBar
+	        android:id="@+id/progressBluetooth"
+	        style="?android:attr/progressBarStyle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:indeterminate="true" />
+	
+	    <TextView
+	        android:id="@+id/textScanning"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/dialog_bluetooth_scanning"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/containerScanning"
+        android:text="@string/dialog_bluetooth_available_devices"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/listDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDevices" />
+
+</RelativeLayout>

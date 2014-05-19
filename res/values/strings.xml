@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dialog_bluetooth_title">Bluetooth</string>
+
+    <string name="dialog_bluetooth_scanning">Scanning</string>
+    <string name="dialog_bluetooth_available_devices">Available devices</string>
+
+    <string name="dialog_bluetooth_status_none">None</string>
+    <string name="dialog_bluetooth_status_bonding">Bonding</string>
+    <string name="dialog_bluetooth_status_bonded">Bonded</string>
+
+</resources>
