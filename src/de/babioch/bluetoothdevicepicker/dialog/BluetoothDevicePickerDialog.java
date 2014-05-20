@@ -86,18 +86,18 @@ public class BluetoothDevicePickerDialog extends DialogFragment {
 
         adapterDevices = new BluetoothDeviceAdapter(getActivity(), R.layout.list_item_bluetooth);
 
+        if (!bluetoothAdapter.isEnabled()) {
+
+            Log.d(TAG, "Bluetooth is disabled, asking user to enable it");
+            startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), ENABLE_BLUETOOTH_REQUEST_CODE);
+
+        } else {
+
+            bluetoothAdapter.startDiscovery();
+
+        }
+
         if (savedInstanceState == null) {
-
-            if (!bluetoothAdapter.isEnabled()) {
-
-                Log.d(TAG, "Bluetooth is disabled, asking user to enable it");
-                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), ENABLE_BLUETOOTH_REQUEST_CODE);
-
-            } else {
-
-                bluetoothAdapter.startDiscovery();
-
-            }
 
             for (BluetoothDevice device : bluetoothAdapter.getBondedDevices()) {
 
